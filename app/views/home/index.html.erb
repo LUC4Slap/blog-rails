@@ -1,0 +1,14 @@
+<h1 style="text-align: center">Post</h1>
+<hr />
+<h3>
+  Admin: <%= @author %>
+</h3>
+<ol>
+  <% @posts.each do |post| %>
+    <li>
+      <%= post[:title] %> - <%= post[:body]%>
+    </li>
+    <% end %>
+</ol>
+<!-- <a href="/estudantes">Estudantes</a> -->
+<%= link_to "Estudantes" , estudantes_path %>

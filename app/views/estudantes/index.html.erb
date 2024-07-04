@@ -1,0 +1,16 @@
+<h1>Informações dos Estudantes</h1>
+
+<% @estudantes.each do |estudante| %>
+  <div>
+    <details>
+      <summary>
+        <%=estudante[:nome]%>
+      </summary>
+      <p>Idade: <%= estudante[:idade] %> anos</p>
+      <p>Curso: <%= estudante[:curso]%>
+      </p>
+    </details>
+  </div>
+  <% end %>
+    <!-- <a href="/home">Home</a> -->
+    <%= link_to "Home" , home_path %>
