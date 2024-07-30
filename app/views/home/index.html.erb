@@ -1,14 +1,3 @@
-<h1 style="text-align: center">Post</h1>
-<hr />
-<h3>
-  Admin: <%= @author %>
-</h3>
-<ol>
-  <% @posts.each do |post| %>
-    <li>
-      <%= post[:title] %> - <%= post[:body]%>
-    </li>
-    <% end %>
-</ol>
-<!-- <a href="/estudantes">Estudantes</a> -->
-<%= link_to "Estudantes" , estudantes_path %>
+<h1>Blog Pessoal</h1>
+<p>Para conferir meus posts, clique no botão a seguir</p>
+<%= link_to "Posts", posts_path, class: "btn btn-primary" %>
