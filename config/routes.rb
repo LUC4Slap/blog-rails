@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   get "up" => "rails/health#show", as: :rails_health_check
   get "home", controller: "home", action: "index", as: "home" #Rota criada manualmente
   # get "home2", to: "home#index" # 'controller#action'
