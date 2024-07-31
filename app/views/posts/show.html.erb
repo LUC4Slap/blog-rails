@@ -3,10 +3,20 @@
 <%= render @post %>
 
 <div>
-  <%= link_to "Editar Post", edit_post_path(@post), class: "btn btn-primary" %>
-  <%= link_to "Voltar", posts_path, class: "btn btn-primary" %>
+  <div class="row">
+    <div class="col-6">
+      <%= link_to "Editar Post", edit_post_path(@post), class: "btn btn-primary" %>
+      <%= link_to "Voltar", posts_path, class: "btn btn-primary" %>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+      <%= button_to "Deletar Post", @post, method: :delete, class: "btn btn-danger mt-3" %>
+    </div>
 
-  <%= button_to "Deletar Post", @post, method: :delete, class: "btn btn-danger mt-3" %>
+  </div>
 </div>
 
 <%= render "comments/form", post: @post %>
+
+<% @comments.each do |comment| %>
+  <%= render "comments/comment" , post: @post, comment: comment %>
+<% end %>
