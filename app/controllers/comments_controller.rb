@@ -7,14 +7,13 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      flash[:notice] = "Comentario criado com sucesso"
-      redirect_to post_path(@post)
+        flash[:notice] = "Comentário criado com sucesso"
+        redirect_to post_path(@post)
     else
-      flash[:notice] = "Comentario não foi criado"
-      redirect_to post_path(@post)
+        flash[:alert] = "Comentário não foi criado"
+        redirect_to post_path(@post)
     end
   end
-
 
   def destroy
     @comment = @post.comments.find(params[:id])
@@ -22,10 +21,10 @@ class CommentsController < ApplicationController
     redirect_to post_path(@post)
   end
 
-
   private
+
   def set_post
-    @post = Post.find([params[:id]])
+    @post = Post.find(params[:post_id])
   end
 
   def comment_params
